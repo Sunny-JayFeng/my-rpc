@@ -17,6 +17,12 @@ import java.util.Map;
  */
 public class ScanPackage {
 
+    /**
+     * 类加载进类模板集合
+     * @param packageName 包名
+     * @param classMap 类模板集合
+     * @throws UnsupportedEncodingException
+     */
     private static void putClass(String packageName, Map<String, Class> classMap) throws UnsupportedEncodingException {
         if (packageName == null || packageName.length() == 0 || classMap == null) return;
         // 文件路径，包级路径中的 . 要变为 /，例如 test.server  -- test/server
@@ -46,6 +52,11 @@ public class ScanPackage {
         }
     }
 
+    /**
+     * 创建类模板集合
+     * @param packageNames 包名
+     * @return 返回类模板集合
+     */
     public static Map<String, Class> getClassMap(String[] packageNames) {
         Map<String, Class> classMap = new HashMap<>(64);
         for (String packageName : packageNames) {

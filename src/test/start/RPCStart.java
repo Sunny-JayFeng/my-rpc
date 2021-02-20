@@ -7,12 +7,12 @@ import starter.RPCServerStarter;
  * @author JayFeng
  * @date 2021/2/19
  */
-@RPCServicePackage({"test.server", "test.server2"})
+@RPCServicePackage({"test.server"})
 public class RPCStart extends RPCServerStarter {
 
     public static void main(String[] args) {
         RPCStart rpcStart = new RPCStart();
-        rpcStart.rpcServerStart(8080);
+        rpcStart.rpcServerStart(9999);
     }
 
 }

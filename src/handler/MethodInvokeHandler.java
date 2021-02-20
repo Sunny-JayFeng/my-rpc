@@ -13,11 +13,18 @@ import java.util.Map;
  */
 public class MethodInvokeHandler {
 
-    public static Object methodInvoke(String className, String methodName, Map<String, Object> paramsMap) {
+    /**
+     * 方法执行
+     * @param className 类名
+     * @param methodName 方法名
+     * @param paramsMap 参数数据
+     * @return 返回方法执行之后的返回值
+     */
+    public static Object methodInvoke(String className, String methodName, Map<Object, Object> paramsMap) {
         Class clazz = ServiceClassManagement.getClass(className);
         Object obj = ServiceClassManagement.getObject(className);
         try {
-            Method method = clazz.getMethod(methodName, clazz);
+            Method method = clazz.getMethod(methodName, Map.class);
             return method.invoke(obj, paramsMap);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();

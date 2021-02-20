@@ -1,6 +1,7 @@
 package starter;
 
 import management.ServiceClassManagement;
+import server.RPCServer;
 
 /**
  * 服务端启动器
@@ -9,8 +10,15 @@ import management.ServiceClassManagement;
  */
 public class RPCServerStarter {
 
+    /**
+     * 启动服务
+     * @param port 端口号
+     */
     public void rpcServerStart(Integer port) {
+        // 加载服务类
         ServiceClassManagement.loadClassMap(this.getClass());
+        // 启动服务监听
+        RPCServer.startListener(port);
     }
 
 }

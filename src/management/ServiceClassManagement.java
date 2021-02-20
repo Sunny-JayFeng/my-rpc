@@ -27,8 +27,6 @@ public class ServiceClassManagement {
         String[] packageNames = packageAnnotation.value();
         classMap = ScanPackage.getClassMap(packageNames);
         loadObjectMap();
-        System.out.println(classMap);
-        System.out.println(objectMap);
     }
 
     /**
